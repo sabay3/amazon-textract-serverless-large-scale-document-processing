@@ -34,8 +34,9 @@ def processRequest(request):
         qUrl = request['asyncQueueUrl']
 
     if(qUrl):
-        features = ["Text", "Forms", "Tables"]
-
+        # To avoid form and tables outputs, this will be added to a configuration file
+        #features = ["Text", "Forms", "Tables"]
+        features = ["Text"]
         jsonMessage = { 'documentId' : documentId,
             "features" : features,
             'bucketName': bucketName,
